@@ -25,7 +25,7 @@ int main()
 
 	while (glm::length(target.position - character.position) > 0.5f * speed)
 	{
-		agent.UpdateAgent();
+		agent.UpdateAgent(0);
 		std::cout << "**********************************CHARACTER********************************" << std::endl <<
 			"X: " << character.position.x << ", Y: " << character.position.y << " ---------> TARGET: " << 
 			"X: " << target.position.x << ", Y: " << target.position.y << std::endl <<
@@ -35,7 +35,7 @@ int main()
 	agent.SetAgentImpl(new KinematicAgentImpl(new KinematicFleeBehavior(&character, &target, speed)));
 	while (glm::length(target.position - character.position) < 14.0f * speed)
 	{
-		agent.UpdateAgent();
+		agent.UpdateAgent(0);
 		std::cout << "**********************************CHARACTER********************************" << std::endl <<
 			"X: " << character.position.x << ", Y: " << character.position.y << " ---------> TARGET: " <<
 			"X: " << target.position.x << ", Y: " << target.position.y << std::endl <<
@@ -51,7 +51,7 @@ int main()
 	{
 		arrived = (glm::length(target.position - character.position) < 0.5f);
 
-		agent.UpdateAgent();
+		agent.UpdateAgent(0);
 		std::cout << "**********************************CHARACTER********************************" << std::endl <<
 			"X: " << character.position.x << ", Y: " << character.position.y << " Direction: " << character.orientation << " ---------> TARGET: " <<
 			"X: " << target.position.x << ", Y: " << target.position.y << std::endl <<
@@ -64,7 +64,7 @@ int main()
 	agent.SetAgentImpl(new KinematicAgentImpl(new KinematicWanderBehavior(&character, speed, 7.0f)));
 	while (std::chrono::system_clock::now() < end)
 	{
-		agent.UpdateAgent();
+		agent.UpdateAgent(0);
 		std::cout << "**********************************CHARACTER********************************" << std::endl <<
 			"X: " << character.position.x << ", Y: " << character.position.y << " Direction: " << character.orientation << " ---------> TARGET: " <<
 			"X: " << target.position.x << ", Y: " << target.position.y << std::endl <<

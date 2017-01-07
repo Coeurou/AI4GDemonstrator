@@ -19,7 +19,7 @@ KinematicSteeringOutput KinematicWanderBehavior::ComputeMovement()
 
 	std::random_device rd;
 	std::mt19937 engine(rd());
-	std::uniform_real_distribution<> distr(-1, 1);
+	std::uniform_real_distribution<float> distr(-1, 1);
 
 	movement.angular = character->orientation + distr(engine) * maxRotation;
 

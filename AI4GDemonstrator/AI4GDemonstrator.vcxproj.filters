@@ -1,72 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Fichiers sources">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Fichiers d%27en-tête">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Fichiers de ressources">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="KinematicBehaviors">
+      <UniqueIdentifier>{bc611806-1c7d-4a6c-969e-701089543aa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4a32a39d-64d7-473a-98b3-341d6fffe91d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Agent">
+      <UniqueIdentifier>{c714e88a-09b4-4dbf-9ff2-5b08df4a40a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="SteeringBehaviors">
+      <UniqueIdentifier>{be04c14d-aa3c-44fd-96ca-799c01c19de4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\SpatialStructure.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\SpatialStructureUtility.h">
+      <Filter>Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="src\SpatialStructureUtility.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicArriveBehavior.h">
+      <Filter>KinematicBehaviors</Filter>
     </ClInclude>
-    <ClInclude Include="src\AgentImpl.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicFleeBehavior.h">
+      <Filter>KinematicBehaviors</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicSteeringOutput.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicMovementBehavior.h">
+      <Filter>KinematicBehaviors</Filter>
     </ClInclude>
-    <ClInclude Include="src\Agent.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicSeekBehavior.h">
+      <Filter>KinematicBehaviors</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicMovementBehavior.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicWanderBehavior.h">
+      <Filter>KinematicBehaviors</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicSeekBehavior.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\SpatialStructure.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicFleeBehavior.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicSteeringOutput.h">
+      <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicArriveBehavior.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\Agent.h">
+      <Filter>Agent</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicWanderBehavior.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\AgentImpl.h">
+      <Filter>Agent</Filter>
     </ClInclude>
-    <ClInclude Include="src\KinematicAgentImpl.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="include\KinematicAgentImpl.h">
+      <Filter>Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringAgentImpl.h">
+      <Filter>Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringMovementBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringSeekBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="src\KinematicSeekBehavior.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="src\KinematicArriveBehavior.cpp">
+      <Filter>KinematicBehaviors</Filter>
     </ClCompile>
     <ClCompile Include="src\KinematicFleeBehavior.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>KinematicBehaviors</Filter>
     </ClCompile>
-    <ClCompile Include="src\KinematicArriveBehavior.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="src\KinematicSeekBehavior.cpp">
+      <Filter>KinematicBehaviors</Filter>
     </ClCompile>
     <ClCompile Include="src\KinematicWanderBehavior.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>KinematicBehaviors</Filter>
     </ClCompile>
     <ClCompile Include="src\KinematicAgentImpl.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringAgentImpl.cpp">
+      <Filter>Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringSeekBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

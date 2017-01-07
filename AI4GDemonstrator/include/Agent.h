@@ -11,7 +11,7 @@ public:
 	Agent(AgentImpl* agentImpl) : impl(agentImpl) {}
 	~Agent() {}
 
-	void UpdateAgent() { impl->Update(); }
+	void UpdateAgent(float deltaTime) { impl->Update(deltaTime); }
 	void SetAgentImpl(AgentImpl* agentImpl) { impl.reset(agentImpl); }
 	void SetAgentImpl(std::unique_ptr<AgentImpl> agentImpl) { impl = std::move(agentImpl); }
 

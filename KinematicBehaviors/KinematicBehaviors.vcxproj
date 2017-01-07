@@ -18,40 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\Agent.h" />
-    <ClInclude Include="include\AgentImpl.h" />
-    <ClInclude Include="include\KinematicAgentImpl.h" />
-    <ClInclude Include="include\KinematicArriveBehavior.h" />
-    <ClInclude Include="include\KinematicFleeBehavior.h" />
-    <ClInclude Include="include\KinematicMovementBehavior.h" />
-    <ClInclude Include="include\KinematicSeekBehavior.h" />
-    <ClInclude Include="include\KinematicSteeringOutput.h" />
-    <ClInclude Include="include\KinematicWanderBehavior.h" />
-    <ClInclude Include="include\SpatialStructure.h" />
-    <ClInclude Include="include\SpatialStructureUtility.h" />
-    <ClInclude Include="include\SteeringAgentImpl.h" />
-    <ClInclude Include="include\SteeringMovementBehavior.h" />
-    <ClInclude Include="include\SteeringSeekBehavior.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\KinematicAgentImpl.cpp" />
-    <ClCompile Include="src\KinematicArriveBehavior.cpp" />
-    <ClCompile Include="src\KinematicFleeBehavior.cpp" />
-    <ClCompile Include="src\KinematicSeekBehavior.cpp" />
-    <ClCompile Include="src\KinematicWanderBehavior.cpp" />
-    <ClCompile Include="src\SteeringAgentImpl.cpp" />
-    <ClCompile Include="src\SteeringSeekBehavior.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8EFB82E0-8008-4497-AC46-E4AFC337B2CD}</ProjectGuid>
+    <ProjectGuid>{4CE1DD98-1386-4A52-B2E0-9AA140D9C98C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>AI4GDemonstrator</RootNamespace>
+    <RootNamespace>KinematicBehaviors</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>KinematicBehaviors</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -109,7 +85,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -122,7 +99,8 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -136,7 +114,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -153,7 +132,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -167,6 +147,14 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AI4GDemonstrator\AI4GDemonstrator.vcxproj">
+      <Project>{8efb82e0-8008-4497-ac46-e4afc337b2cd}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

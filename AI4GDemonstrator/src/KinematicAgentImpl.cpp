@@ -7,7 +7,7 @@ KinematicAgentImpl::KinematicAgentImpl(KinematicMovementBehavior* behavior)	: mo
 KinematicAgentImpl::~KinematicAgentImpl()
 {}
 
-void KinematicAgentImpl::Update()
+void KinematicAgentImpl::Update(float deltaTime)
 {
 	auto movement = movementBehavior->ComputeMovement();
 	auto transform = movementBehavior->GetCharacterPtr();

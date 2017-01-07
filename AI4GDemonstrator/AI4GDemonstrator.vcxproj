@@ -71,6 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\Devs\Librairies\glm\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -83,7 +84,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -142,20 +143,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <ClInclude Include="src\Agent.h" />
+    <ClInclude Include="src\AgentImpl.h" />
+    <ClInclude Include="src\KinematicAgentImpl.h" />
+    <ClInclude Include="src\KinematicArriveBehavior.h" />
+    <ClInclude Include="src\KinematicFleeBehavior.h" />
+    <ClInclude Include="src\KinematicMovementBehavior.h" />
+    <ClInclude Include="src\KinematicSeekBehavior.h" />
+    <ClInclude Include="src\KinematicSteeringOutput.h" />
+    <ClInclude Include="src\KinematicWanderBehavior.h" />
+    <ClInclude Include="src\SpatialStructure.h" />
+    <ClInclude Include="src\SpatialStructureUtility.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="AI4GDemonstrator.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="src\KinematicAgentImpl.cpp" />
+    <ClCompile Include="src\KinematicArriveBehavior.cpp" />
+    <ClCompile Include="src\KinematicFleeBehavior.cpp" />
+    <ClCompile Include="src\KinematicSeekBehavior.cpp" />
+    <ClCompile Include="src\KinematicWanderBehavior.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

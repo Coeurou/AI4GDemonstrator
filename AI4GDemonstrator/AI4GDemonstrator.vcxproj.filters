@@ -65,6 +65,24 @@
     <ClInclude Include="include\SteeringSeekBehavior.h">
       <Filter>SteeringBehaviors</Filter>
     </ClInclude>
+    <ClInclude Include="include\SteeringFleeBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringArriveBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringAlignBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringVelocityMatchingBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringPursueBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringEvadeBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicArriveBehavior.cpp">
@@ -86,6 +104,24 @@
       <Filter>Agent</Filter>
     </ClCompile>
     <ClCompile Include="src\SteeringSeekBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringFleeBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringArriveBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringAlignBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringPursueBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringEvadeBehavior.cpp">
       <Filter>SteeringBehaviors</Filter>
     </ClCompile>
   </ItemGroup>

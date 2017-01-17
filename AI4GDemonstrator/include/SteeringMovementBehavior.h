@@ -2,6 +2,7 @@
 
 #include "KinematicSteeringOutput.h"
 #include "SpatialStructure.h"
+#include <string>
 
 class SteeringMovementBehavior
 {
@@ -17,6 +18,11 @@ public:
 
 	SpatialStructure* GetCharacterPtr() { return character; }
 	SpatialStructure* GetTargetPtr() { return target; }
+
+	virtual std::string ToString()
+	{
+		return "SteeringMovementBehavior";
+	}
 
 private:
 	SpatialStructure* character;

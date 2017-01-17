@@ -3,17 +3,17 @@
 #include "SteeringMovementBehavior.h"
 #include "SpatialStructure.h"
 
-class SteeringSeekBehavior : public SteeringMovementBehavior
+class SteeringFleeBehavior : public SteeringMovementBehavior
 {
 public:
-	SteeringSeekBehavior(SpatialStructure* character, SpatialStructure* target, float speed = 1.0f);
-	~SteeringSeekBehavior();
+	SteeringFleeBehavior(SpatialStructure* character, SpatialStructure* target, float speed = 1.0f);
+	~SteeringFleeBehavior();
 
 	KinematicSteeringOutput ComputeMovement();
 
 	virtual std::string ToString()
 	{
-		return "SteeringSeekBehavior";
+		return "SteeringFleeBehavior";
 	}
 
 protected:

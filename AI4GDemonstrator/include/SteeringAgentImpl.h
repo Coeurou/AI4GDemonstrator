@@ -8,6 +8,7 @@ class SteeringAgentImpl : public AgentImpl
 {
 public:
 	SteeringAgentImpl(SteeringMovementBehavior* behavior, float speed);
+	SteeringAgentImpl(SteeringMovementBehavior&& behavior, float speed);
 	~SteeringAgentImpl();
 
 	void Update(float deltaTime) override;

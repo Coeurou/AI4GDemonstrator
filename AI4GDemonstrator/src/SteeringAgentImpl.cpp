@@ -1,7 +1,7 @@
 #include "SteeringAgentImpl.h"
 #include <gtc/constants.hpp>
 
-SteeringAgentImpl::SteeringAgentImpl(SteeringMovementBehavior* behavior, float speed) : movementBehavior(std::move(behavior)), maxSpeed(speed)
+SteeringAgentImpl::SteeringAgentImpl(SteeringMovementBehavior* behavior, float speed) : movementBehavior(behavior), maxSpeed(speed)
 {}
 
 SteeringAgentImpl::~SteeringAgentImpl()
@@ -16,6 +16,9 @@ void SteeringAgentImpl::Update(float deltaTime)
 
 	auto movement = movementBehavior->ComputeMovement();
 	transform->velocity += movement.linear * deltaTime;
-	transform->velocity = glm::min(transform->velocity, glm::vec2(1) * maxSpeed);
+
+	if (glm::length(transform->velocity) > maxSpeed) {
+		transform->velocity = glm::normalize(transform->velocity) * maxSpeed;
+	}
 	transform->rotation += movement.angular * deltaTime;
 }

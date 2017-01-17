@@ -31,8 +31,14 @@
     <ClInclude Include="include\SpatialStructure.h" />
     <ClInclude Include="include\SpatialStructureUtility.h" />
     <ClInclude Include="include\SteeringAgentImpl.h" />
+    <ClInclude Include="include\SteeringAlignBehavior.h" />
+    <ClInclude Include="include\SteeringArriveBehavior.h" />
+    <ClInclude Include="include\SteeringEvadeBehavior.h" />
+    <ClInclude Include="include\SteeringFleeBehavior.h" />
     <ClInclude Include="include\SteeringMovementBehavior.h" />
+    <ClInclude Include="include\SteeringPursueBehavior.h" />
     <ClInclude Include="include\SteeringSeekBehavior.h" />
+    <ClInclude Include="include\SteeringVelocityMatchingBehavior.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicAgentImpl.cpp" />
@@ -41,7 +47,13 @@
     <ClCompile Include="src\KinematicSeekBehavior.cpp" />
     <ClCompile Include="src\KinematicWanderBehavior.cpp" />
     <ClCompile Include="src\SteeringAgentImpl.cpp" />
+    <ClCompile Include="src\SteeringAlignBehavior.cpp" />
+    <ClCompile Include="src\SteeringArriveBehavior.cpp" />
+    <ClCompile Include="src\SteeringEvadeBehavior.cpp" />
+    <ClCompile Include="src\SteeringFleeBehavior.cpp" />
+    <ClCompile Include="src\SteeringPursueBehavior.cpp" />
     <ClCompile Include="src\SteeringSeekBehavior.cpp" />
+    <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8EFB82E0-8008-4497-AC46-E4AFC337B2CD}</ProjectGuid>

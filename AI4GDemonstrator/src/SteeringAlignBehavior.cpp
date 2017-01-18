@@ -1,6 +1,4 @@
 #include "SteeringAlignBehavior.h"
-#include "SpatialStructureUtility.h"
-#include <glm.hpp>
 #include <gtc/constants.hpp>
 
 SteeringAlignBehavior::SteeringAlignBehavior(SpatialStructure* character, SpatialStructure* target)
@@ -39,12 +37,13 @@ KinematicSteeringOutput SteeringAlignBehavior::ComputeMovement()
 
 	float targetSpeed = (rotationSize > slowRadius) ? maxSpeed : maxSpeed * rotationSize / slowRadius;
 
-	rotation = glm::normalize(rotation) * targetSpeed;
+	rotation = (rotation / rotationSize) * targetSpeed;
 	movement.angular = rotation - character->rotation;
 	movement.angular /= timeToArrive;
 
-	if (glm::length(movement.angular) > maxAcceleration) {
-		movement.angular = glm::normalize(movement.angular) * maxAcceleration;
+	float angularSize = abs(movement.angular);
+	if (angularSize > maxAcceleration) {
+		movement.angular = (movement.angular / angularSize) * maxAcceleration;
 	}
 
 	return movement;

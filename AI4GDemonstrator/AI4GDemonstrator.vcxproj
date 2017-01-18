@@ -34,7 +34,9 @@
     <ClInclude Include="include\SteeringAlignBehavior.h" />
     <ClInclude Include="include\SteeringArriveBehavior.h" />
     <ClInclude Include="include\SteeringEvadeBehavior.h" />
+    <ClInclude Include="include\SteeringFaceBehavior.h" />
     <ClInclude Include="include\SteeringFleeBehavior.h" />
+    <ClInclude Include="include\SteeringLWYGBehavior.h" />
     <ClInclude Include="include\SteeringMovementBehavior.h" />
     <ClInclude Include="include\SteeringPursueBehavior.h" />
     <ClInclude Include="include\SteeringSeekBehavior.h" />
@@ -50,7 +52,9 @@
     <ClCompile Include="src\SteeringAlignBehavior.cpp" />
     <ClCompile Include="src\SteeringArriveBehavior.cpp" />
     <ClCompile Include="src\SteeringEvadeBehavior.cpp" />
+    <ClCompile Include="src\SteeringFaceBehavior.cpp" />
     <ClCompile Include="src\SteeringFleeBehavior.cpp" />
+    <ClCompile Include="src\SteeringLWYGBehavior.cpp" />
     <ClCompile Include="src\SteeringPursueBehavior.cpp" />
     <ClCompile Include="src\SteeringSeekBehavior.cpp" />
     <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp" />

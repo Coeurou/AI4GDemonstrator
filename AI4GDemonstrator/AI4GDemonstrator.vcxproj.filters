@@ -83,6 +83,12 @@
     <ClInclude Include="include\SteeringEvadeBehavior.h">
       <Filter>SteeringBehaviors</Filter>
     </ClInclude>
+    <ClInclude Include="include\SteeringFaceBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SteeringLWYGBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicArriveBehavior.cpp">
@@ -122,6 +128,12 @@
       <Filter>SteeringBehaviors</Filter>
     </ClCompile>
     <ClCompile Include="src\SteeringEvadeBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringFaceBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteeringLWYGBehavior.cpp">
       <Filter>SteeringBehaviors</Filter>
     </ClCompile>
   </ItemGroup>

@@ -12,8 +12,7 @@
 #include "SteeringArriveBehavior.h"
 #include "SteeringAlignBehavior.h"
 #include "SteeringPursueBehavior.h"
-#include "KinematicWanderBehavior.h"
-#include "KinematicAgentImpl.h"
+#include "SteeringWanderBehavior.h"
 
 int main()
 {
@@ -100,7 +99,7 @@ int main()
 	character.position = glm::vec2(0);
 	agent.SetAgentImpl(new SteeringAgentImpl(new SteeringPursueBehavior(&character, &target, speed, 0.1f), speed));
 
-	Agent targetAgent(new KinematicAgentImpl(new KinematicWanderBehavior(&target, speed-1.5f, 0.7f)));
+	Agent targetAgent(new SteeringAgentImpl(new SteeringWanderBehavior(&target, speed, 1.5f, 2.0f, 5.0f), speed));
 
 	while (glm::length(target.position - character.position) > 0.05f * speed)
 	{

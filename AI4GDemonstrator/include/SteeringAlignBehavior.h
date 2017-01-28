@@ -8,8 +8,8 @@ class SteeringAlignBehavior : public SteeringMovementBehavior
 public:
 	SteeringAlignBehavior(SpatialStructure* character, SpatialStructure* target);
 	~SteeringAlignBehavior();
-
-	void SetMaxAcceleration(float acc) { maxAcceleration = acc; }
+		
+	void SetMaxAcceleration(float acc) { maxRotation = acc; }
 	void SetMaxSpeed(float speed)	   { maxSpeed = speed; }
 	void SetTargetRadius(float radius) { targetRadius = radius; }
 	void SetSlowRadius(float radius)   { slowRadius = radius; }
@@ -23,7 +23,7 @@ public:
 	}
 
 private:
-	float maxAcceleration;
+	float maxRotation;
 	float maxSpeed;
 	float targetRadius;
 	float slowRadius;

@@ -2,7 +2,7 @@
 #include <gtc/constants.hpp>
 
 SteeringAlignBehavior::SteeringAlignBehavior(SpatialStructure* character, SpatialStructure* target)
-	: SteeringMovementBehavior(character, target), maxAcceleration(1.0f), maxSpeed(1.0f), targetRadius(0.2f), slowRadius(1.5f), timeToArrive(0.1f)
+	: SteeringMovementBehavior(character, target), maxRotation(1.0f), maxSpeed(1.0f), targetRadius(0.2f), slowRadius(1.5f), timeToArrive(0.1f)
 {}
 
 SteeringAlignBehavior::~SteeringAlignBehavior()
@@ -28,7 +28,6 @@ KinematicSteeringOutput SteeringAlignBehavior::ComputeMovement()
 	rotation = MapToRange(rotation, glm::pi<float>(), glm::two_pi<float>());
 	float rotationSize = abs(rotation);
 
-
 	movement.linear = glm::vec2(0);
 	if (rotationSize < targetRadius) {
 		movement.angular = 0;
@@ -42,8 +41,8 @@ KinematicSteeringOutput SteeringAlignBehavior::ComputeMovement()
 	movement.angular /= timeToArrive;
 
 	float angularSize = abs(movement.angular);
-	if (angularSize > maxAcceleration) {
-		movement.angular = (movement.angular / angularSize) * maxAcceleration;
+	if (angularSize > maxRotation) {
+		movement.angular = (movement.angular / angularSize) * maxRotation;
 	}
 
 	return movement;

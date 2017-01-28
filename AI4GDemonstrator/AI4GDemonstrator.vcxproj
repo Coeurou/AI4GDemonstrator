@@ -41,6 +41,7 @@
     <ClInclude Include="include\SteeringPursueBehavior.h" />
     <ClInclude Include="include\SteeringSeekBehavior.h" />
     <ClInclude Include="include\SteeringVelocityMatchingBehavior.h" />
+    <ClInclude Include="include\SteeringWanderBehavior.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicAgentImpl.cpp" />
@@ -58,6 +59,7 @@
     <ClCompile Include="src\SteeringPursueBehavior.cpp" />
     <ClCompile Include="src\SteeringSeekBehavior.cpp" />
     <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp" />
+    <ClCompile Include="src\SteeringWanderBehavior.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8EFB82E0-8008-4497-AC46-E4AFC337B2CD}</ProjectGuid>

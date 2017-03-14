@@ -92,6 +92,15 @@
     <ClInclude Include="include\SteeringWanderBehavior.h">
       <Filter>SteeringBehaviors</Filter>
     </ClInclude>
+    <ClInclude Include="include\SteeringPathFollowingBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Path.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Segment.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicArriveBehavior.cpp">
@@ -142,5 +151,12 @@
     <ClCompile Include="src\SteeringWanderBehavior.cpp">
       <Filter>SteeringBehaviors</Filter>
     </ClCompile>
+    <ClCompile Include="src\SteeringPathFollowingBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Path.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Segment.cpp" />
   </ItemGroup>
 </Project>

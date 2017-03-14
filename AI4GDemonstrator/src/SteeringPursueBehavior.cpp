@@ -20,7 +20,12 @@ KinematicSteeringOutput SteeringPursueBehavior::ComputeMovement()
 
 	float prediction = (speed < distance / maxPrediction) ? maxPrediction : distance / speed;
 
+	auto tempPosition = target->position;
 	target->position += target->velocity * prediction;
 
-	return SteeringSeekBehavior::ComputeMovement();
+	movement = SteeringSeekBehavior::ComputeMovement();
+
+	target->position = tempPosition;
+
+	return movement;
 }

@@ -28,6 +28,8 @@
     <ClInclude Include="include\KinematicSeekBehavior.h" />
     <ClInclude Include="include\KinematicSteeringOutput.h" />
     <ClInclude Include="include\KinematicWanderBehavior.h" />
+    <ClInclude Include="include\Path.h" />
+    <ClInclude Include="include\Segment.h" />
     <ClInclude Include="include\SpatialStructure.h" />
     <ClInclude Include="include\SpatialStructureUtility.h" />
     <ClInclude Include="include\SteeringAgentImpl.h" />
@@ -38,6 +40,7 @@
     <ClInclude Include="include\SteeringFleeBehavior.h" />
     <ClInclude Include="include\SteeringLWYGBehavior.h" />
     <ClInclude Include="include\SteeringMovementBehavior.h" />
+    <ClInclude Include="include\SteeringPathFollowingBehavior.h" />
     <ClInclude Include="include\SteeringPursueBehavior.h" />
     <ClInclude Include="include\SteeringSeekBehavior.h" />
     <ClInclude Include="include\SteeringVelocityMatchingBehavior.h" />
@@ -49,6 +52,8 @@
     <ClCompile Include="src\KinematicFleeBehavior.cpp" />
     <ClCompile Include="src\KinematicSeekBehavior.cpp" />
     <ClCompile Include="src\KinematicWanderBehavior.cpp" />
+    <ClCompile Include="src\Path.cpp" />
+    <ClCompile Include="src\Segment.cpp" />
     <ClCompile Include="src\SteeringAgentImpl.cpp" />
     <ClCompile Include="src\SteeringAlignBehavior.cpp" />
     <ClCompile Include="src\SteeringArriveBehavior.cpp" />
@@ -56,6 +61,7 @@
     <ClCompile Include="src\SteeringFaceBehavior.cpp" />
     <ClCompile Include="src\SteeringFleeBehavior.cpp" />
     <ClCompile Include="src\SteeringLWYGBehavior.cpp" />
+    <ClCompile Include="src\SteeringPathFollowingBehavior.cpp" />
     <ClCompile Include="src\SteeringPursueBehavior.cpp" />
     <ClCompile Include="src\SteeringSeekBehavior.cpp" />
     <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp" />
@@ -75,20 +81,20 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -118,12 +124,15 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\guill\Documents\Visual Studio 2015\Projects\AI4GDemonstrator\AI4GDemonstrator\include;F:\Devs\Librairies\glm\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\guill\Documents\Visual Studio 2015\Projects\AI4GDemonstrator\AI4GDemonstrator\include;F:\Devs\Librairies\glm\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Users\guill\Documents\Visual Studio 2015\Projects\AI4GDemonstrator\AI4GDemonstrator\include;F:\Devs\Librairies\glm\glm;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -140,7 +149,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -171,7 +180,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>

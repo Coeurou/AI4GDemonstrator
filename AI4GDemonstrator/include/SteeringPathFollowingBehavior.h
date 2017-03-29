@@ -11,13 +11,11 @@ public:
 														  float speed = 1.0f, float offset = 1.0f, float prediction = 0.5f);
 							~SteeringPathFollowingBehavior();
 
-	KinematicSteeringOutput ComputeMovement();
+	KinematicSteeringOutput ComputeMovement() override;
 
-	virtual std::string		ToString();
+	virtual std::string		ToString()							{ return "SteeringPathFollowingBehavior"; }
 
 private:
-	float					predictionTime;
-	float					targetOffset;
 	float					currentDistOnPath;
 	Path					path;
 };

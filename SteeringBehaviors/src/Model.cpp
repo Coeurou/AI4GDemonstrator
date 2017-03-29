@@ -65,6 +65,31 @@ void Model::Render() const
 	}
 }
 
+glm::vec3 Model::GetSize()
+{
+	glm::vec3 sizeSum = glm::vec3(0);
+	for (auto& m : meshes) {
+		sizeSum += m.GetSize();
+	}
+	return sizeSum;
+}
+
+std::vector<Texture> LoadMaterialTextures(aiMaterial* mat, aiTextureType type)
+{
+	std::vector<Texture> textures;
+	for (GLuint i = 0; i < mat->GetTextureCount(type); i++)
+	{
+		aiString str;
+		mat->GetTexture(type, i, &str);
+		Texture texture(GL_TEXTURE_2D);
+		texture.LoadImage(str.C_Str(), true);
+		texture.SetParameter(GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		texture.SetParameter(GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		textures.emplace_back(std::move(texture));
+	}
+	return textures;
+}
+
 /*
 ====================================================================================================
 void LoadMesh
@@ -77,6 +102,7 @@ void Model::LoadMesh(aiMesh* mesh, const aiScene* scene)
 {
 	std::vector<Vertex> vertices;
 	std::vector<GLuint> indices;
+	std::vector<Texture> textures;
 
 	for (size_t vertex_i = 0; vertex_i < mesh->mNumVertices; vertex_i++)
 	{
@@ -88,13 +114,15 @@ void Model::LoadMesh(aiMesh* mesh, const aiScene* scene)
 		vector.z = mesh->mVertices[vertex_i].z;
 		vertex.position = vector;
 
-		vertex.texCoords = glm::vec2(0);
-
 		vector.x = mesh->mNormals[vertex_i].x;
 		vector.y = mesh->mNormals[vertex_i].y;
 		vector.z = mesh->mNormals[vertex_i].z;
 		vertex.normal = vector;
 		
+		vertex.texCoords = (mesh->HasTextureCoords(0)) ?
+			glm::vec2(mesh->mTextureCoords[0][vertex_i].x, mesh->mTextureCoords[0][vertex_i].y) :
+			glm::vec2(0);
+
 		vertices.push_back(vertex);
 	}
 
@@ -104,8 +132,18 @@ void Model::LoadMesh(aiMesh* mesh, const aiScene* scene)
 			indices.push_back(face.mIndices[index]);
 	}
 
+	if (mesh->mMaterialIndex >= 0)
+	{
+		aiMaterial* material = scene->mMaterials[mesh->mMaterialIndex];
+
+		std::vector<Texture> diffuseMaps = LoadMaterialTextures(material, aiTextureType_DIFFUSE);
+		textures.insert(textures.end(), diffuseMaps.begin(), diffuseMaps.end());
+		std::vector<Texture> specularMaps = LoadMaterialTextures(material, aiTextureType_SPECULAR);
+		textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
+	}
+
 	meshes.emplace_back();
-	meshes.back().InitMesh(vertices, indices);
+	meshes.back().InitMesh(vertices, indices, textures);
 }
 
 /*

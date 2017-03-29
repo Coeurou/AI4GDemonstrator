@@ -1,6 +1,10 @@
 #include "GLProgram.h"
+#include <algorithm>
 #include <array>
 #include <iostream>
+#include <iterator>
+#include <fstream>
+#include <sstream>
 
 GLProgram::GLProgram()
 {
@@ -42,6 +46,30 @@ bool GLProgram::AddShader(GLenum shaderType, const char* shaderSource)
 
 	glDeleteShader(shaderID);
 	return true;
+}
+
+/*
+======================================================================================
+void AddShader(GLenum shaderType, const std::string& filePath)
+
+Create a shader from a file, read the file,
+assign shader source to an output stringstream, pass it to the other AddShader method.
+======================================================================================
+*/
+bool GLProgram::AddShader(GLenum shaderType, const std::string& filePath)
+{
+	std::ifstream ifs;
+	ifs.open(filePath);
+	if (!ifs.is_open()) {
+		return false;
+	}
+
+	std::ostringstream shaderSource;
+	std::copy(std::istreambuf_iterator<char>(ifs),
+			  std::istreambuf_iterator<char>(),
+			  std::ostreambuf_iterator<char>(shaderSource));
+
+	return AddShader(shaderType, shaderSource.str().c_str());
 }
 
 /*

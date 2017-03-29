@@ -4,9 +4,9 @@ const GLenum iboTarget = GL_ELEMENT_ARRAY_BUFFER;
 const GLenum vboTarget = GL_ARRAY_BUFFER;
 
 Grid::Grid(GLushort width, GLushort depth)
-	: width(width), depth(depth), halfWidth((GLushort)(width*0.5f)), halfDepth((GLushort)(depth*0.5f)), vao(0), vbo(0), ibo(0)
-{
-}
+	: width(width), depth(depth), halfWidth((GLushort)(width*0.5f)), halfDepth((GLushort)(depth*0.5f)),
+	  vao(0), vbo(0), ibo(0)
+{}
 
 Grid::~Grid()
 {
@@ -83,11 +83,11 @@ void Grid::InitBuffers()
 }
 
 /*
-======================================================
-void InitBuffers
+===========================================
+void InitVertexArray
 
-Create a VAO and a VBO, fill the vbo with vertices data
-=======================================================
+Configure VAO attributes position and color
+===========================================
 */
 void Grid::InitVertexArray()
 {

@@ -5,8 +5,8 @@
 /*==============================================================================================
 							  Looking where you going behavior
 ================================================================================================*/
-SteeringLWYGBehavior::SteeringLWYGBehavior(SpatialStructure* character, SpatialStructure* target)
-	: SteeringAlignBehavior(character, target)
+SteeringLWYGBehavior::SteeringLWYGBehavior(SpatialStructure* character)
+	: SteeringAlignBehavior(character, nullptr)
 {}
 
 SteeringLWYGBehavior::~SteeringLWYGBehavior()
@@ -15,9 +15,10 @@ SteeringLWYGBehavior::~SteeringLWYGBehavior()
 KinematicSteeringOutput SteeringLWYGBehavior::ComputeMovement()
 {
 	auto character = GetCharacterPtr();
-	auto target = GetTargetPtr();
+	SpatialStructure target;
 
-	target->orientation = GetNewOrientation(character->velocity, character->orientation);
+	target.orientation = GetNewOrientation(character->velocity, character->orientation);
+	SetTarget(&target);
 
 	return SteeringAlignBehavior::ComputeMovement();
 }

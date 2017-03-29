@@ -18,6 +18,7 @@ public:
 
 	bool				LoadModel(const char* filePath);
 	void				Render() const;
+	glm::vec3			GetSize();
 
 private:
 	std::vector<Mesh>	meshes;

@@ -1,8 +1,11 @@
 #include "SteeringEvadeBehavior.h"
 
 SteeringEvadeBehavior::SteeringEvadeBehavior(SpatialStructure* character, SpatialStructure* target, float speed, float prediction)
-	: SteeringFleeBehavior(character, target, speed), maxPrediction(prediction)
-{}
+	: SteeringFleeBehavior(character, target, speed)
+{
+	auto& parameters = GetParametersByRef();
+	parameters[MAXPREDICTION_PARAM] = { Parameter::FLOAT, prediction };
+}
 
 SteeringEvadeBehavior::~SteeringEvadeBehavior()
 {}
@@ -18,6 +21,8 @@ KinematicSteeringOutput SteeringEvadeBehavior::ComputeMovement()
 	auto distance = glm::length(direction);
 	auto speed = glm::length(character->velocity);
 
+	auto& parameters = GetParametersByRef();
+	auto maxPrediction = parameters[MAXPREDICTION_PARAM].floatValue;
 	float prediction = (speed < distance / maxPrediction) ? maxPrediction : distance / speed;
 
 	auto tempPosition = target->position;

@@ -2,8 +2,12 @@
 
 SteeringPathFollowingBehavior::SteeringPathFollowingBehavior(SpatialStructure* character, SpatialStructure* target,
 															 Path path, float speed, float offset, float prediction)
-	: SteeringSeekBehavior(character, target, speed), path(path), targetOffset(offset), predictionTime(prediction)
-{}
+	: SteeringSeekBehavior(character, target, speed), path(path)
+{
+	auto& parameters = GetParametersByRef();
+	parameters[DISTANCE_PARAM] = { Parameter::FLOAT, offset };
+	parameters[MAXPREDICTION_PARAM] = { Parameter::FLOAT, prediction };
+}
 
 SteeringPathFollowingBehavior::~SteeringPathFollowingBehavior()
 {}
@@ -21,7 +25,9 @@ KinematicSteeringOutput SteeringPathFollowingBehavior::ComputeMovement()
 	KinematicSteeringOutput movement;
 
 	auto character = GetCharacterPtr();
-	auto target = GetTargetPtr();
+	auto& parameters = GetParametersByRef();
+	auto predictionTime = parameters[MAXPREDICTION_PARAM].floatValue;
+	auto targetOffset = parameters[DISTANCE_PARAM].floatValue;
 
 	glm::vec2 predictedPosition = character->position + character->velocity * predictionTime;
 	float newDistance = path.GetDistance(predictedPosition);
@@ -32,12 +38,10 @@ KinematicSteeringOutput SteeringPathFollowingBehavior::ComputeMovement()
 	float targetDistance = currentDistOnPath + targetOffset;
 
 	auto nextTarget = path.GetPosition(targetDistance);
-	target->position = (nextTarget != Segment::OUTSIDE_SEGMENT) ? nextTarget : character->position;
+
+	SpatialStructure target;
+	target.position = (nextTarget != Segment::OUTSIDE_SEGMENT) ? nextTarget : character->position;
+	SetTarget(&target);
 
 	return SteeringSeekBehavior::ComputeMovement();
-}
-
-std::string SteeringPathFollowingBehavior::ToString()
-{
-	return "SteeringPathFollowingBehavior";
 }

@@ -4,11 +4,11 @@
 #include <glm.hpp>
 
 /*
-===============================================================================
+==========================================
 
 Define a segment as two points in 2D space
 
-===============================================================================
+==========================================
 */
 struct Segment
 {
@@ -17,7 +17,7 @@ public:
 	static const float					DISTANCE_NOT_FOUND;
 	static const glm::vec2				OUTSIDE_SEGMENT;
 
-	std::array<glm::vec2, NB_POINTS>	points = { glm::vec2(0), glm::vec2(0) };
+	std::array<glm::vec2, NB_POINTS>	points;
 
 	glm::vec2							GetSegment() const;
 	float								GetLength() const;

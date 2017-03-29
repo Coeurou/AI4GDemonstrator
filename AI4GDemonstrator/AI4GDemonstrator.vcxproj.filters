@@ -21,6 +21,9 @@
     <Filter Include="SteeringBehaviors">
       <UniqueIdentifier>{be04c14d-aa3c-44fd-96ca-799c01c19de4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PrioritizedBehaviors">
+      <UniqueIdentifier>{6ec95591-858c-407f-84e9-34c60f6b858f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\SpatialStructureUtility.h">
@@ -101,6 +104,54 @@
     <ClInclude Include="include\Segment.h">
       <Filter>Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="include\CollisionAvoidanceBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SeparationBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WallAvoidanceBehavior.h">
+      <Filter>SteeringBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Collision.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CollisionDetector.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AABB.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BlendedBehavior.h">
+      <Filter>PrioritizedBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\PrioritySteering.h">
+      <Filter>PrioritizedBehaviors</Filter>
+    </ClInclude>
+    <ClInclude Include="include\BehaviorsHeader.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ICommand.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Subject.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Observer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IPrototype.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NonCopyable.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Notification.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Parameter.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KinematicArriveBehavior.cpp">
@@ -157,6 +208,26 @@
     <ClCompile Include="src\Path.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Segment.cpp" />
+    <ClCompile Include="src\SeparationBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CollisionAvoidanceBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WallAvoidanceBehavior.cpp">
+      <Filter>SteeringBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CollisionDetector.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Segment.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlendedBehavior.cpp">
+      <Filter>PrioritizedBehaviors</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PrioritySteering.cpp">
+      <Filter>PrioritizedBehaviors</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

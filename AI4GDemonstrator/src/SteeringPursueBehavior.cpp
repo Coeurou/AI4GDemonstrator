@@ -1,8 +1,11 @@
 #include "SteeringPursueBehavior.h"
 
 SteeringPursueBehavior::SteeringPursueBehavior(SpatialStructure* character, SpatialStructure* target, float speed, float prediction)
-	: SteeringSeekBehavior(character, target, speed), maxPrediction(prediction)
-{}
+	: SteeringSeekBehavior(character, target, speed)
+{
+	auto& parameters = GetParametersByRef();
+	parameters[MAXPREDICTION_PARAM] = { Parameter::FLOAT, prediction };
+}
 
 SteeringPursueBehavior::~SteeringPursueBehavior()
 {}
@@ -18,6 +21,8 @@ KinematicSteeringOutput SteeringPursueBehavior::ComputeMovement()
 	auto distance = glm::length(direction);
 	auto speed = glm::length(character->velocity);
 
+	auto& parameters = GetParametersByRef();
+	auto maxPrediction = parameters[MAXPREDICTION_PARAM].floatValue;
 	float prediction = (speed < distance / maxPrediction) ? maxPrediction : distance / speed;
 
 	auto tempPosition = target->position;

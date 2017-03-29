@@ -5,13 +5,10 @@
 class SteeringFaceBehavior : public SteeringAlignBehavior
 {
 public:
-	SteeringFaceBehavior(SpatialStructure* character, SpatialStructure* target);
-	~SteeringFaceBehavior();
+									SteeringFaceBehavior(SpatialStructure* character, SpatialStructure* target);
+	virtual							~SteeringFaceBehavior();
 
-	KinematicSteeringOutput ComputeMovement();
+	virtual KinematicSteeringOutput ComputeMovement() override;
 
-	virtual std::string ToString()
-	{
-		return "SteeringFaceBehavior";
-	}
+	virtual std::string				ToString()					{ return "SteeringFaceBehavior"; }
 };

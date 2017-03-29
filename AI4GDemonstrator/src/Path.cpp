@@ -1,7 +1,10 @@
 #include "Path.h"
 #include <iostream>
 
-Path::Path() 
+Path::Path(const std::vector<Segment>& s) : segments(s)
+{}
+
+Path::Path(std::initializer_list<Segment> s) : segments(s)
 {}
 
 Path::Path(const Path& path) : segments(path.segments)
@@ -31,7 +34,7 @@ Return the distance between path first point and pos parameter, this works
 only if pos lay on the path. (see also Segment::GetDistance)
 ===============================================================================================
 */
-float Path::GetDistance(const glm::vec2& pos)
+float Path::GetDistance(const glm::vec2& pos) const
 {
 	float distance = 0.0f;
 	float cumulativeDistance = 0.0f;
@@ -58,7 +61,7 @@ Return the position on the path according to the distance with path starting poi
 (see also Segment::GetPosition)
 ===============================================================================================
 */
-glm::vec2 Path::GetPosition(float distance)
+glm::vec2 Path::GetPosition(float distance) const
 {
 	float cumulativeDistance = 0.0f;
 

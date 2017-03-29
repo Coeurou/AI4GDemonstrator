@@ -5,13 +5,10 @@
 class SteeringLWYGBehavior : public SteeringAlignBehavior
 {
 public:
-	SteeringLWYGBehavior(SpatialStructure* character, SpatialStructure* target);
-	~SteeringLWYGBehavior();
+							SteeringLWYGBehavior(SpatialStructure* character);
+							~SteeringLWYGBehavior();
 
-	KinematicSteeringOutput ComputeMovement();
+	KinematicSteeringOutput ComputeMovement() override;
 
-	virtual std::string ToString()
-	{
-		return "SteeringLWYGBehavior";
-	}
+	virtual std::string		ToString()					{ return "SteeringLWYGBehavior"; }
 };

@@ -19,8 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\AABB.h" />
     <ClInclude Include="include\Agent.h" />
     <ClInclude Include="include\AgentImpl.h" />
+    <ClInclude Include="include\BehaviorsHeader.h" />
+    <ClInclude Include="include\BlendedBehavior.h" />
+    <ClInclude Include="include\Collision.h" />
+    <ClInclude Include="include\CollisionAvoidanceBehavior.h" />
+    <ClInclude Include="include\CollisionDetector.h" />
+    <ClInclude Include="include\ICommand.h" />
+    <ClInclude Include="include\IPrototype.h" />
     <ClInclude Include="include\KinematicAgentImpl.h" />
     <ClInclude Include="include\KinematicArriveBehavior.h" />
     <ClInclude Include="include\KinematicFleeBehavior.h" />
@@ -28,8 +36,14 @@
     <ClInclude Include="include\KinematicSeekBehavior.h" />
     <ClInclude Include="include\KinematicSteeringOutput.h" />
     <ClInclude Include="include\KinematicWanderBehavior.h" />
+    <ClInclude Include="include\NonCopyable.h" />
+    <ClInclude Include="include\Notification.h" />
+    <ClInclude Include="include\Observer.h" />
+    <ClInclude Include="include\Parameter.h" />
     <ClInclude Include="include\Path.h" />
+    <ClInclude Include="include\PrioritySteering.h" />
     <ClInclude Include="include\Segment.h" />
+    <ClInclude Include="include\SeparationBehavior.h" />
     <ClInclude Include="include\SpatialStructure.h" />
     <ClInclude Include="include\SpatialStructureUtility.h" />
     <ClInclude Include="include\SteeringAgentImpl.h" />
@@ -45,15 +59,21 @@
     <ClInclude Include="include\SteeringSeekBehavior.h" />
     <ClInclude Include="include\SteeringVelocityMatchingBehavior.h" />
     <ClInclude Include="include\SteeringWanderBehavior.h" />
+    <ClInclude Include="include\Subject.h" />
+    <ClInclude Include="include\WallAvoidanceBehavior.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\BlendedBehavior.cpp" />
+    <ClCompile Include="src\CollisionDetector.cpp" />
     <ClCompile Include="src\KinematicAgentImpl.cpp" />
     <ClCompile Include="src\KinematicArriveBehavior.cpp" />
     <ClCompile Include="src\KinematicFleeBehavior.cpp" />
     <ClCompile Include="src\KinematicSeekBehavior.cpp" />
     <ClCompile Include="src\KinematicWanderBehavior.cpp" />
     <ClCompile Include="src\Path.cpp" />
+    <ClCompile Include="src\PrioritySteering.cpp" />
     <ClCompile Include="src\Segment.cpp" />
+    <ClCompile Include="src\SeparationBehavior.cpp" />
     <ClCompile Include="src\SteeringAgentImpl.cpp" />
     <ClCompile Include="src\SteeringAlignBehavior.cpp" />
     <ClCompile Include="src\SteeringArriveBehavior.cpp" />
@@ -66,6 +86,8 @@
     <ClCompile Include="src\SteeringSeekBehavior.cpp" />
     <ClCompile Include="src\SteeringVelocityMatchingBehavior.cpp" />
     <ClCompile Include="src\SteeringWanderBehavior.cpp" />
+    <ClCompile Include="src\CollisionAvoidanceBehavior.cpp" />
+    <ClCompile Include="src\WallAvoidanceBehavior.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8EFB82E0-8008-4497-AC46-E4AFC337B2CD}</ProjectGuid>
